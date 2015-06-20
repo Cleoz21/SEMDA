@@ -1,0 +1,16 @@
+<?php
+class Portal extends CI_Controller{
+
+	public function inicio(){
+		$this->load->view('inicio');
+	}
+
+	public function profesional(){
+		$this->load->view('profesional');
+	}
+
+	public function meme(){
+		$this->load->view('meme1');
+	}
+	
+}
