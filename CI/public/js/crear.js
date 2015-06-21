@@ -1,11 +1,11 @@
 function crear(){
 
 	alert("La Ficha ha sido creada");
-	window.location.assign("inicio");
+	window.location.assign("/CI/index.php/portal/inicio");
 }
 
 function cancelar () {
-	window.location.assign("inicio");
+	window.location.assign("/CI/index.php/portal/inicio");
 }
 
 window.onload = function(){

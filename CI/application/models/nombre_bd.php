@@ -16,8 +16,25 @@ class nombre_bd extends CI_Model{
 			return $query->row();	
 		}
 		else{
-			return null;
+			return false;
 		}
+	}
+
+	public function insertar_alumno($alumno){
+		if( $this->db->insert('fichaAlumno', $alumno) )
+			return true;
+		else
+			return false;
+	}
+
+	public function actualizar_ficha($fichaActualizada, $id){
+			$data=array(
+				'nombre'=>'asdf');
+			//$this->db->where('rut',$id);
+		if($this->db->update('fichaAlumno', $fichaActualizada, $id))
+			return true;
+		else
+			return false;
 	}
 }
 ?>

@@ -1,10 +1,14 @@
 function Buscar_Alumno(){
 
 	var Strin = document.getElementById("Rut_alumno").value;
+	if(Strin.length==0){
+		window.location.assign('meme');
+	}
+	else{
 		var rut='fichaclinica/';
-		var rut2='asdf';
 		rut=rut+Strin;
 		window.location.assign(rut);
+	}
 }
 
 function regresar () {

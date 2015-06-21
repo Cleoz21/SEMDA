@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '127.0.0.1/CI/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------

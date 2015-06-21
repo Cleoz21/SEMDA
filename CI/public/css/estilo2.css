@@ -59,6 +59,9 @@ ul#menu li a:hover {
 input{
 	margin-bottom: 10px;
 }
+input[type=text2]{
+text-align: center;
+}
 
 input[type="button"]:hover{
 	cursor: pointer;

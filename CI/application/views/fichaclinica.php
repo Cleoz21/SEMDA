@@ -18,34 +18,38 @@
 		?>
 		</div>
 		<hr><hr>
-	<div class="header">Ficha Clinica</div>
+	<div class="header">Ficha Clínica</div>
 		<div class="contenido">
-			<label>Nombre: </label> <!-- etiqueta para los input -->
-				<input type="text" size="100" value="<?php echo $nombre;?>" disabled><br>
-			<label>Rut: </label> <!-- etiqueta para los input -->
-				<input type="text" value="<?php echo $rut;?>" disabled><br>
-			<label>Direccion: </label> <!-- etiqueta para los input -->
-				<input type="text" size="100"  value="<?php echo $direccion?>" disabled><br><!-- input para textos -->
-			<label>Telefono de Contacto: </label>
-				<input type="tel" value="<?php echo $telefono?>" disabled><br>
-			<label>Nombre del padre o la madre : </label>
-				<input type="text" value="<?php echo $nombreFamiliar?>" disabled><br>
-			<label>Carrera: </label> <!-- etiqueta para los input -->
-				<input type="text" value="<?php echo $carrera?>" disabled><br>
-			<label>Año de Ingreso: </label>
-				<input type="text" value="<?php echo $añoIngreso?>" disabled><br>
+			<form action="/CI/index.php/portal/actualizar/<?php echo $rut;?>" method="post">
+				<fieldset >
+					<label>Nombre: </label> <!-- etiqueta para los input -->
+					<input type="text" size="45" value="<?php echo $nombre;?>" enabled name="nombre"><br>
+					<label>Rut: </label> <!-- etiqueta para los input -->
+					<input type="text" size="45" value="<?php echo $rut;?>" disabled name="rut"><br>
+					<label>Dirección: </label> <!-- etiqueta para los input -->
+					<input type="text" size="45"  value="<?php echo $direccion?>" enabled name="direccion"><br><!-- input para textos -->
+					<label>Teléfono de contacto: </label>
+					<input type="tel" size="45" value="<?php echo $telefono?>" enabled name="telefono"><br>
+					<label>Nombre del padre o la madre : </label>
+					<input type="text" size="45" value="<?php echo $nombreFamiliar?>" enabled name="nombreFamiliar"><br>
+					<label>Carrera: </label> <!-- etiqueta para los input -->
+					<input type="text" size="45" value="<?php echo $carrera?>" enabled name="carrera"><br>
+					<label>Año de ingreso: </label>
+					<input type="text" size="45" value="<?php echo $añoIngreso?>" enabled name="añoIngreso"><br>
 		</div>
 		<hr><hr>
 			<label>Especialidad: </label>
-				<input type="text" placeholder="Ingrese su Especialidad">
-				<input type="radio">Primera Vez
-				<input type="radio">Control
-				<input type="radio">Ausente
+				<input type="text" size="35" <?php if($especialista==''){echo 'placeholder="Ingrese su especialidad"';}else{ echo "value=$especialista"; }?> enabled name="especialista">
+				<input type="checkbox" name="primera" <?if($seleccion==1){echo 'checked="checked"';}?> >Primera vez
+				<input type="checkbox" name="control" <?if($seleccion==2){echo 'checked="checked"';}?> >Control
+				<input type="checkbox" name="ausente" <?if($seleccion==3){echo 'checked="checked"';}?> >Ausente
 		<br>
 		<textarea class="AreaTexto">Observaciones</textarea>
-		<textarea class="AreaTexto">Diagnostico</textarea>
+		<textarea class="AreaTexto">Diagnóstico</textarea>
 
-		<input type="button" id="Guardar_Datos" value="Guardar">
-		<input type="button" id="Volver_inicio" value="Volver Inicio">
+		<input type="submit" name="guardar" value="Guardar">
+		<input type="submit" name="Volver_inicio" value="Volver al Inicio">
+		</fieldset>
+		</form>
 	</body>
 </html>	

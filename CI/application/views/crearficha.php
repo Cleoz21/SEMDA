@@ -20,29 +20,29 @@
 		</div>
 
 		<div class="header_main">
-			<h1>Ficha Clinica</h1>
+			<h1>Ficha Clínica</h1>
 		</div>
 		<div class="header">Ingrese los datos del alumno</div>
 			<div class="contenido">
 				<!-- formularios, contienen campos que se deben rellenar -->
-				<form>
+				<form action="/CI/index.php/portal/insertar" method="post">
 					<fieldset >
 						<label>Nombre: </label> <!-- etiqueta para los input -->
-							<input type="text" placeholder="Ingrese su nombre" name="nombre" id="nombre" ><br>
+							<input type="text" size="45" placeholder="Ingrese el nombre del paciente" enabled name="nombre" id="nombre"><br>
 						<label>Rut: </label> <!-- etiqueta para los input -->
-							<input type="text" placeholder="Ingrese su Rut" name="rut" id="rut" ><br>
+							<input type="text" size="46" placeholder="Ingrese el Rut sin puntos ni dígito verificador" name="rut" id="rut" ><br>
 						<label>Dirección: </label> <!-- etiqueta para los input -->
-							<input type="text" placeholder="Ingrese su dirección" name="direccion" id="direccion" ><br> <!-- input para textos -->
+							<input type="text" size="45" placeholder="Ingrese la dirección del paciente" name="direccion" id="direccion" ><br> <!-- input para textos -->
 						<label>Teléfono de contacto: </label>
-							<input type="tel" min="1" name="telefono" id="telefono" placeholder="Ingrese su número telefónico"><br>
+							<input type="tel" min="1" name="telefono" id="Ingrese el telefono del paciente" size="45" placeholder="Ingrese su número telefónico"><br>
 						<label>Nombre del padre o la madre : </label>
-							<input type="text" placeholder="Nombre padre o madre" name="nombrepadres" id="nombrepadres"><br>
+							<input type="text" size="45" placeholder="Nombre del padre o madre del paciente" name="nombreFamiliar" id="nombreFamiliar"><br>
 						<label>Carrera: </label> <!-- etiqueta para los input -->
-							<input type="text" placeholder="Ingrese su carrera" name="nombre" id="nombre" ><br>
+							<input type="text" size="45" placeholder="Ingrese la carrera que estudia el paciente" name="carrera" id="carrera" ><br>
 						<label>Año de ingreso: </label>
-							<input type="text" name="añoIngreso" id="añoIngreso" placeholder="Ingrese año de ingreso"><br>
-						<input type="button" value="Crear Ficha" id="CrearFicha">
-						<input type="button" value="Cancelar" id="CancelarFicha">
+							<input type="text" name="añoIngreso" id="añoIngreso" size="45" placeholder="Ingrese el año de ingreso del paciente"><br>
+						<input type="submit" name="Guardar" value="Guardar">
+						<input type="submit" value="Cancelar" name="cancelar">
 					</fieldset>
 				</form>
 			</div>

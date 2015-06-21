@@ -24,7 +24,7 @@
 				<form>
 					<fieldset>
 						<label>Rut Alumno: </label> <!-- etiqueta para los input -->
-							<input type="text" value="17.972.484-7" name="rut" id="Rut_alumno" ><br>
+							<input type="text" size="44" placeholder="Inserte el rut sin puntos ni dígito verificador" name="rut" id="Rut_alumno" ><br>
 							<input type="button" value="Buscar" id="buscar_alumno">
 							<input type="button" value="Volver" id="regresar_pagina">
 					</fieldset>
