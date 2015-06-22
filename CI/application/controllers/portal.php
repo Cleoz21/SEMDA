@@ -38,6 +38,7 @@ class Portal extends CI_Controller{
 				'observaciones' => '',
 				'diagnostico' => ''
 				);
+
 			if ( $this->nombre_bd->insertar_alumno($alumno) ){
 				redirect('/portal/inicio','location');
 			}
@@ -76,6 +77,7 @@ class Portal extends CI_Controller{
 			redirect('/portal/inicio','location');
 		}
 		else{
+
 			$fichaActualizada=array(
 					'nombre' => $this->input->post('nombre'),
 					'direccion' => $this->input->post('direccion'),
@@ -86,25 +88,40 @@ class Portal extends CI_Controller{
 					'especialista' => $this->input->post('especialista'),
 					'seleccion' =>0
 					);
-			$id=array('rut'=>$rut);
-			if($this->input->post('primera')){
-				$fichaActualizada['seleccion']=1;
-			}
-			else if($this->input->post('control')){
-				$fichaActualizada['seleccion']=2;
-			}
-			else if($this->input->post('ausente')){
-				$fichaActualizada['seleccion']=3;
-			}
-			/*if($fichaActualizada['telefono']!=0){
-				$this->load->view('prueba', $id);}*/
-			if ($this->nombre_bd->actualizar_ficha($fichaActualizada, $id) ){
-				redirect('/portal/inicio','location');
+			$controlNombre;
+			$direccion=$fichaActualizada['nombre'];
+			//if(strlen($direccion)<5){
+		//		$controlNombre=false;
+		//	}
+			if(!preg_match("/^[a-zA-Z áéíóú]{5,50}$/", $fichaActualizada['nombre'])){
+				$controlNombre=false;
 			}
 			else{
+				$controlNombre=true;
+			}
+			if($controlNombre==false){
+				$this->load->view('meme1');
+			}
+			else{
+				$id=array('rut'=>$rut);
+				if($this->input->post('primera')){
+					$fichaActualizada['seleccion']=1;
+				}
+				else if($this->input->post('control')){
+					$fichaActualizada['seleccion']=2;
+				}
+				else if($this->input->post('ausente')){
+					$fichaActualizada['seleccion']=3;
+				}
+				/*if($fichaActualizada['telefono']!=0){
+					$this->load->view('prueba', $id);}*/
+				if ($this->nombre_bd->actualizar_ficha($fichaActualizada, $id) ){
+					redirect('/portal/inicio','location');
+				}
+				else{
 				redirect('/portal/meme','location');
+				}
 			}
 		}
 	}
-
 }
